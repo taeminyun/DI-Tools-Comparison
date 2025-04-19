@@ -24,6 +24,11 @@ import MyPlugin
 let localHelper = LocalHelper(name: "MyPlugin")
 
 // Creates our project using a helper function defined in ProjectDescriptionHelpers
-let project = Project.app(name: "DIToolsComparison",
-                          destinations: .iOS,
-                          additionalTargets: ["DIToolsComparisonKit", "DIToolsComparisonUI"])
+let project = Project.app(
+    name: "DIToolsComparison",
+    destinations: .iOS,
+    additionalTargets: ["DIToolsComparisonKit", "DIToolsComparisonUI"],
+    dependencies: [
+        .project(target: "Domain", path: .relativeToRoot("Domain"))
+    ]
+)

@@ -7,14 +7,43 @@ import ProjectDescription
 
 extension Project {
     /// Helper function to create the Project for this ExampleApp
-    public static func app(name: String, destinations: Destinations, additionalTargets: [String]) -> Project {
-        var targets = makeAppTargets(name: name,
-                                     destinations: destinations,
-                                     dependencies: additionalTargets.map { TargetDependency.target(name: $0) })
+    public static func app(
+        name: String,
+        destinations: Destinations,
+        additionalTargets: [String],
+        dependencies: [TargetDependency]
+    ) -> Project {
+        var targets = makeAppTargets(
+            name: name,
+            destinations: destinations,
+            dependencies: dependencies
+        )
         targets += additionalTargets.flatMap({ makeFrameworkTargets(name: $0, destinations: destinations) })
-        return Project(name: name,
-                       organizationName: "tuist.io",
-                       targets: targets)
+
+        return Project(
+            name: name,
+            organizationName: "tuist.io",
+            targets: targets
+        )
+    }
+
+    public static func makeStaticFramework(
+        name: String,
+        dependencies: [TargetDependency]
+    ) -> Self {
+        Project(
+            name: name,
+            targets: [
+                Target(
+                    name: name,
+                    destinations: .iOS,
+                    product: .staticFramework,
+                    bundleId: "io.tuist.DIToolsComparison.\(name)",
+                    sources: "Sources/**",
+                    dependencies: dependencies
+                )
+            ]
+        )
     }
 
     // MARK: - Private

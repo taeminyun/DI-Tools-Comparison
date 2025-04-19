@@ -5,12 +5,12 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
-struct ChildUseCase {
+public struct ChildUseCase {
 
     private let colorRepository: ColorRepository
     private let stringRepositry: StringRepository
 
-    init(
+    public init(
         colorRepository: ColorRepository,
         stringRepositry: StringRepository
     ) {
@@ -18,11 +18,11 @@ struct ChildUseCase {
         self.stringRepositry = stringRepositry
     }
 
-    var randomColor: String {
+    public var randomColor: String {
         colorRepository.colors.randomElement() ?? "white"
     }
 
-    var titleWithColor: String {
+    public var titleWithColor: String {
         stringRepositry.str1
         + stringRepositry.str2
         + stringRepositry.str3

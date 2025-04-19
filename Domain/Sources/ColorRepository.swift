@@ -5,6 +5,6 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
-protocol ColorRepository {
+public protocol ColorRepository {
     var colors: [String] { get }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 class ChildViewModel {
     private let useCase: ChildUseCase

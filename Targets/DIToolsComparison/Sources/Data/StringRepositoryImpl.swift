@@ -5,6 +5,8 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
+import Domain
+
 struct StringRepositoryImpl: StringRepository {
     var str1: String { "Hello, " }
 
