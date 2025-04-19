@@ -2,7 +2,7 @@ import UIKit
 import DIToolsComparisonKit
 import DIToolsComparisonUI
 
-import Presentation
+import SamplePresentation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

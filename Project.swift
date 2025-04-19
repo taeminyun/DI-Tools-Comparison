@@ -29,8 +29,11 @@ let project = Project.app(
     destinations: .iOS,
     additionalTargets: ["DIToolsComparisonKit", "DIToolsComparisonUI"],
     dependencies: [
-        .project(target: "Presentation", path: .relativeToRoot("Presentation")),
-        .project(target: "Domain",      path: .relativeToRoot("Domain")),
-        .project(target: "Data",        path: .relativeToRoot("Data"))
+        .external(name: "Swinject"),
+        .external(name: "Dependencies"),
+        .external(name: "NeedleFoundation"),
+        .project(target: "SamplePresentation",    path: .relativeToRoot("SamplePresentation")),
+        .project(target: "SampleDomain",          path: .relativeToRoot("SampleDomain")),
+        .project(target: "SampleData",            path: .relativeToRoot("SampleData"))
     ]
 )

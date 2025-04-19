@@ -7,8 +7,8 @@
 
 import UIKit
 
-import Domain
-import Data
+import SampleDomain
+import SampleData
 
 final public class RootViewController: UIViewController {
 

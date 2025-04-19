@@ -2,5 +2,5 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeStaticFramework(
-    name: "Presentation"
+    name: "SampleDomain"
 )
