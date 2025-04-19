@@ -29,7 +29,7 @@ extension Project {
 
     public static func makeStaticFramework(
         name: String,
-        dependencies: [TargetDependency]
+        dependencies: [TargetDependency] = []
     ) -> Self {
         Project(
             name: name,

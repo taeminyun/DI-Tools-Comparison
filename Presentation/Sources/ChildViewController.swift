@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class ChildViewController: UIViewController {
+final public class ChildViewController: UIViewController {
 
     private let viewModel: ChildViewModel
 
-    init(viewModel: ChildViewModel) {
+    public init(viewModel: ChildViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

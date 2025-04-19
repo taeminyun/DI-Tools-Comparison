@@ -6,12 +6,13 @@
 //
 
 import UIKit
+
 import Domain
 
-class ChildViewModel {
+public class ChildViewModel {
     private let useCase: ChildUseCase
 
-    init(useCase: ChildUseCase) {
+    public init(useCase: ChildUseCase) {
         self.useCase = useCase
     }
 

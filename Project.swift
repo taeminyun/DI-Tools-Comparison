@@ -29,6 +29,8 @@ let project = Project.app(
     destinations: .iOS,
     additionalTargets: ["DIToolsComparisonKit", "DIToolsComparisonUI"],
     dependencies: [
-        .project(target: "Domain", path: .relativeToRoot("Domain"))
+        .project(target: "Presentation", path: .relativeToRoot("Presentation")),
+        .project(target: "Domain",      path: .relativeToRoot("Domain")),
+        .project(target: "Data",        path: .relativeToRoot("Data"))
     ]
 )

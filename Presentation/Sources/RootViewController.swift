@@ -6,11 +6,13 @@
 //
 
 import UIKit
+
 import Domain
+import Data
 
-final class RootViewController: UIViewController {
+final public class RootViewController: UIViewController {
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         let button = UIButton(frame: view.frame)

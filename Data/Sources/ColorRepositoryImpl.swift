@@ -7,8 +7,10 @@
 
 import Domain
 
-struct ColorRepositoryImpl: ColorRepository {
-    var colors: [String] {
+public struct ColorRepositoryImpl: ColorRepository {
+    public var colors: [String] {
         ["systemRed", "systemGreen", "systemBlue"]
     }
+
+    public init() { }
 }
