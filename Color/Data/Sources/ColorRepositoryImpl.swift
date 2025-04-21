@@ -5,7 +5,7 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
-import SampleDomain
+import ColorDomain
 
 public struct ColorRepositoryImpl: ColorRepository {
     public var colors: [String] {

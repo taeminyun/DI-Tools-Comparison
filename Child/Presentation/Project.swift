@@ -2,8 +2,8 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeStaticFramework(
-    name: "Data",
+    name: "ChildPresentation",
     dependencies: [
-        .project(target: "Domain", path: .relativeToRoot("Sample/Domain")),
+        .project(target: "ChildDomain", path: .relativeToRoot("Child/Domain")),
     ]
 )

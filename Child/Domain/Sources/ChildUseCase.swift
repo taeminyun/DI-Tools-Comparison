@@ -5,6 +5,9 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
+import ColorDomain
+import StringDomain
+
 public struct ChildUseCase {
 
     private let colorRepository: ColorRepository

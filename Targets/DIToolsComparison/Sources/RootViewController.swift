@@ -7,9 +7,11 @@
 
 import UIKit
 
-import SamplePresentation
-import SampleDomain
-import SampleData
+import ChildPresentation
+import ChildDomain
+
+import ColorData
+import StringData
 
 final public class RootViewController: UIViewController {
 
