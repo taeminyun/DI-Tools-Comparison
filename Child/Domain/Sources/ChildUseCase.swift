@@ -13,14 +13,14 @@ import StringDomain
 public struct ChildUseCase {
 
     private let colorRepository: ColorRepository
-    private let stringRepositry: StringRepository
+    private let stringRepository: StringRepository
 
     public init(
         colorRepository: ColorRepository,
-        stringRepositry: StringRepository
+        stringRepository: StringRepository
     ) {
         self.colorRepository = colorRepository
-        self.stringRepositry = stringRepositry
+        self.stringRepository = stringRepository
     }
 
     public var randomColor: String {
@@ -32,8 +32,8 @@ public struct ChildUseCase {
     }
 
     public var titleWithColor: String {
-        stringRepositry.str1 + stringRepositry.str2 + stringRepositry.str3 + "\n"
+        stringRepository.str1 + stringRepository.str2 + stringRepository.str3 + "\n"
         + "\n"
-        + stringRepositry.name
+        + stringRepository.name
     }
 }

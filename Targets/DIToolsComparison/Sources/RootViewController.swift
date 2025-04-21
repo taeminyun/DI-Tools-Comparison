@@ -43,7 +43,7 @@ private extension RootViewController {
                 viewModel: ChildViewModel(
                     useCase: ChildUseCase(
                         colorRepository: ColorRepositoryImpl(alpha: alpha),
-                        stringRepositry: StringRepositoryImpl(to: name)
+                        stringRepository: StringRepositoryImpl(to: name)
                     )
                 )
             ),
