@@ -14,6 +14,10 @@ public struct StringRepositoryImpl: StringRepository {
 
     public var str3: String { "!" }
 
-    public init() { }
+    public let name: String
+
+    public init(to name: String) {
+        self.name = name
+    }
 }
 

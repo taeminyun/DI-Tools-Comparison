@@ -5,6 +5,8 @@
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
 
+import CoreGraphics
+
 import ColorDomain
 import StringDomain
 
@@ -25,9 +27,13 @@ public struct ChildUseCase {
         colorRepository.colors.randomElement() ?? "white"
     }
 
+    public var alpha: CGFloat {
+        colorRepository.alpha
+    }
+
     public var titleWithColor: String {
-        stringRepositry.str1
-        + stringRepositry.str2
-        + stringRepositry.str3
+        stringRepositry.str1 + stringRepositry.str2 + stringRepositry.str3 + "\n"
+        + "\n"
+        + stringRepositry.name
     }
 }

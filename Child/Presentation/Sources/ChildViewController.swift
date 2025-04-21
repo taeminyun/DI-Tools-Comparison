@@ -26,6 +26,8 @@ final public class ChildViewController: UIViewController {
 
         let button = UIButton(frame: view.frame)
         button.setTitle(viewModel.buttonTitle, for: .normal)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
         button.center = view.center
         button.addAction(
             UIAction { [weak self] _ in

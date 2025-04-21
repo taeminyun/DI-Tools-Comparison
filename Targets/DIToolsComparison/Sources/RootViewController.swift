@@ -15,13 +15,16 @@ import StringData
 
 final public class RootViewController: UIViewController {
 
+    let alpha: CGFloat = 0.5
+    let name: String = "YOGIYO"
+
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let button = UIButton(frame: view.frame)
         button.setTitle("Tap Me", for: .normal)
         button.center = view.center
-        
+
         button.addAction(
             UIAction { [weak self] _ in
                 self?.handleButton()
@@ -39,8 +42,8 @@ private extension RootViewController {
             ChildViewController(
                 viewModel: ChildViewModel(
                     useCase: ChildUseCase(
-                        colorRepository: ColorRepositoryImpl(),
-                        stringRepositry: StringRepositoryImpl()
+                        colorRepository: ColorRepositoryImpl(alpha: alpha),
+                        stringRepositry: StringRepositoryImpl(to: name)
                     )
                 )
             ),

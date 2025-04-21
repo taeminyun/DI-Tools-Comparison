@@ -17,7 +17,7 @@ public class ChildViewModel {
     }
 
     var backgroundColor: UIColor {
-        useCase.randomColor.color
+        useCase.randomColor.color.withAlphaComponent(useCase.alpha)
     }
 
     var buttonTitle: String {
