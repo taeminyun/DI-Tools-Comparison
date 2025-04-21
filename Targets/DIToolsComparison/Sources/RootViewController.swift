@@ -7,6 +7,7 @@
 
 import UIKit
 
+import SamplePresentation
 import SampleDomain
 import SampleData
 

@@ -32,8 +32,9 @@ let project = Project.app(
         .external(name: "Swinject"),
         .external(name: "Dependencies"),
         .external(name: "NeedleFoundation"),
-        .project(target: "SamplePresentation",    path: .relativeToRoot("SamplePresentation")),
-        .project(target: "SampleDomain",          path: .relativeToRoot("SampleDomain")),
-        .project(target: "SampleData",            path: .relativeToRoot("SampleData"))
+
+        .project(target: "Presentation", path: .relativeToRoot("Sample/Presentation")),
+        .project(target: "Domain", path: .relativeToRoot("Sample/Domain")),
+        .project(target: "Data", path: .relativeToRoot("Sample/Data"))
     ]
 )
