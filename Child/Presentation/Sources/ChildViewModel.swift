@@ -9,11 +9,21 @@ import UIKit
 
 import ChildDomain
 
+import ColorData
+import StringData
+
 public class ChildViewModel {
+
+    let alpha: CGFloat = 0.5
+    let name: String = "YOGIYO"
+
     private let useCase: ChildUseCase
 
-    public init(useCase: ChildUseCase) {
-        self.useCase = useCase
+    public init() {
+        self.useCase = ChildUseCase(
+            colorRepository: ColorRepositoryImpl(alpha: alpha),
+            stringRepository: StringRepositoryImpl(to: name)
+        )
     }
 
     var backgroundColor: UIColor {

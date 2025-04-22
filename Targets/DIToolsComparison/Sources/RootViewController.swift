@@ -10,13 +10,7 @@ import UIKit
 import ChildPresentation
 import ChildDomain
 
-import ColorData
-import StringData
-
 final public class RootViewController: UIViewController {
-
-    let alpha: CGFloat = 0.5
-    let name: String = "YOGIYO"
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +33,7 @@ final public class RootViewController: UIViewController {
 private extension RootViewController {
     func handleButton() {
         present(
-            ChildViewController(
-                viewModel: ChildViewModel(
-                    useCase: ChildUseCase(
-                        colorRepository: ColorRepositoryImpl(alpha: alpha),
-                        stringRepository: StringRepositoryImpl(to: name)
-                    )
-                )
-            ),
+            ChildViewController(viewModel: ChildViewModel()),
             animated: true
         )
     }
