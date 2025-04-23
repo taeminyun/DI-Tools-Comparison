@@ -9,8 +9,5 @@ public protocol StringRepository {
     var str1: String { get }
     var str2: String { get }
     var str3: String { get }
-    var name: String { get }
-
-    init(to name: String)
 }
 

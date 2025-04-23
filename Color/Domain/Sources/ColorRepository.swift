@@ -9,7 +9,4 @@ import CoreGraphics
 
 public protocol ColorRepository {
     var colors: [String] { get }
-    var alpha: CGFloat { get }
-
-    init(alpha: CGFloat)
 }

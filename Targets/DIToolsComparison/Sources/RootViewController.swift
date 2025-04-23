@@ -32,10 +32,7 @@ final public class RootViewController: UIViewController {
 // MARK: - private
 private extension RootViewController {
     func handleButton() {
-        present(
-            ChildViewController(viewModel: ChildViewModel()),
-            animated: true
-        )
+        present(ChildViewController(), animated: true)
     }
 }
 

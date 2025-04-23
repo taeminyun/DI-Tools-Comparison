@@ -7,12 +7,13 @@
 
 import UIKit
 
+import Dependencies
+
 final public class ChildViewController: UIViewController {
 
-    private let viewModel: ChildViewModel
+    @Dependency(\.childViewModel) var viewModel
 
-    public init(viewModel: ChildViewModel) {
-        self.viewModel = viewModel
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,7 +23,7 @@ final public class ChildViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = viewModel.backgroundColor
+        view.backgroundColor = viewModel.backgroundColor(with: viewModel.alpha)
 
         let button = UIButton(frame: view.frame)
         button.setTitle(viewModel.buttonTitle, for: .normal)

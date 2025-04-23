@@ -7,31 +7,23 @@
 
 import UIKit
 
-import ChildDomain
+import Dependencies
 
-import ColorData
-import StringData
+import ChildDomain
 
 public class ChildViewModel {
 
     let alpha: CGFloat = 0.5
     let name: String = "YOGIYO"
 
-    private let useCase: ChildUseCase
+    @Dependency(\.childUseCase) var useCase
 
-    public init() {
-        self.useCase = ChildUseCase(
-            colorRepository: ColorRepositoryImpl(alpha: alpha),
-            stringRepository: StringRepositoryImpl(to: name)
-        )
-    }
-
-    var backgroundColor: UIColor {
-        useCase.randomColor.color.withAlphaComponent(useCase.alpha)
+    func backgroundColor(with alpha: CGFloat) -> UIColor {
+        useCase.randomColor.color.withAlphaComponent(alpha)
     }
 
     var buttonTitle: String {
-        useCase.titleWithColor
+        useCase.titleWithColor(with: name)
     }
 }
 
@@ -43,5 +35,17 @@ fileprivate extension String {
             case "systemBlue":  return .systemBlue
             default:            return .systemBackground
         }
+    }
+}
+
+// MARK: - Dependencies
+extension ChildViewModel: DependencyKey {
+    public static var liveValue: ChildViewModel = ChildViewModel()
+}
+
+extension DependencyValues {
+    var childViewModel: ChildViewModel {
+        get { self[ChildViewModel.self] }
+        set { self[ChildViewModel.self] = newValue }
     }
 }

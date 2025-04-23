@@ -7,33 +7,35 @@
 
 import CoreGraphics
 
-import ColorDomain
-import StringDomain
+import Dependencies
+
+import ColorData
+import StringData
 
 public struct ChildUseCase {
 
-    private let colorRepository: ColorRepository
-    private let stringRepository: StringRepository
-
-    public init(
-        colorRepository: ColorRepository,
-        stringRepository: StringRepository
-    ) {
-        self.colorRepository = colorRepository
-        self.stringRepository = stringRepository
-    }
+    @Dependency(\.colorRepository) var colorRepository
+    @Dependency(\.stringRepository) var stringRepository
 
     public var randomColor: String {
         colorRepository.colors.randomElement() ?? "white"
     }
 
-    public var alpha: CGFloat {
-        colorRepository.alpha
-    }
-
-    public var titleWithColor: String {
+    public func titleWithColor(with name: String) -> String {
         stringRepository.str1 + stringRepository.str2 + stringRepository.str3 + "\n"
         + "\n"
-        + stringRepository.name
+        + name
+    }
+}
+
+// MARK: - Dependencies
+extension ChildUseCase: DependencyKey {
+    public static var liveValue: ChildUseCase = ChildUseCase()
+}
+
+extension DependencyValues {
+    public var childUseCase: ChildUseCase {
+        get { self[ChildUseCase.self] }
+        set { self[ChildUseCase.self] = newValue }
     }
 }
