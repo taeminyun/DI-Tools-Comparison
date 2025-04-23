@@ -1,6 +1,6 @@
 //
 //  ChildUseCase.swift
-//  DIExample
+//  ChildDomain
 //
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //

@@ -1,6 +1,6 @@
 //
 //  RootViewController.swift
-//  DIExample
+//  DIToolsComparison
 //
 //  Created by 윤태민 on 9/13/24.
 //

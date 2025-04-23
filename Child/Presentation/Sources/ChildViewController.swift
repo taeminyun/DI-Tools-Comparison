@@ -1,6 +1,6 @@
 //
 //  ChildViewController.swift
-//  DIExample
+//  ChildPresentation
 //
 //  Created by 윤태민 on 9/13/24.
 //

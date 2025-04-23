@@ -1,6 +1,6 @@
 //
 //  StringRepository.swift
-//  DIExample
+//  StringDomain
 //
 //  Created by 윤태민(Taemin Yun) on 4/12/25.
 //
