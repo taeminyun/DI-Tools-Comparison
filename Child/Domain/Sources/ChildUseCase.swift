@@ -9,8 +9,7 @@ import CoreGraphics
 
 import Dependencies
 
-import ColorData
-import StringData
+import ChildDI
 
 public struct ChildUseCase {
 

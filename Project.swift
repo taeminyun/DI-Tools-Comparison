@@ -33,6 +33,7 @@ let project = Project.app(
         .external(name: "Dependencies"),
         .external(name: "NeedleFoundation"),
 
+        .project(target: "ChildDI", path: .relativeToRoot("Child/DI")),
         .project(target: "ChildPresentation", path: .relativeToRoot("Child/Presentation")),
         .project(target: "ChildDomain", path: .relativeToRoot("Child/Domain")),
 

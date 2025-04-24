@@ -15,16 +15,6 @@ public struct StringRepositoryImpl: StringRepository {
     public var str2: String { "World" }
 
     public var str3: String { "!" }
-}
 
-// MARK: - Dependencies
-extension StringRepositoryImpl: DependencyKey {
-    public static var liveValue: StringRepository = StringRepositoryImpl()
-}
-
-extension DependencyValues {
-    public var stringRepository: StringRepository {
-        get { self[StringRepositoryImpl.self] }
-        set { self[StringRepositoryImpl.self] = newValue }
-    }
+    public init() { } 
 }

@@ -16,16 +16,6 @@ public struct ColorRepositoryImpl: ColorRepository {
     public var colors: [String] {
         ["systemRed", "systemGreen", "systemBlue"]
     }
-}
 
-// MARK: - Dependencies
-extension ColorRepositoryImpl: DependencyKey {
-    public static var liveValue: ColorRepository = ColorRepositoryImpl()
-}
-
-extension DependencyValues {
-    public var colorRepository: ColorRepository {
-        get { self[ColorRepositoryImpl.self] }
-        set { self[ColorRepositoryImpl.self] = newValue }
-    }
+    public init() { }
 }
