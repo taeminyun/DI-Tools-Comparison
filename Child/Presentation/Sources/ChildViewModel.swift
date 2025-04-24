@@ -14,8 +14,8 @@ import StringData
 
 public class ChildViewModel {
 
-    let alpha: CGFloat = 0.5
-    let name: String = "YOGIYO"
+    private let alpha: CGFloat = 0.5
+    private let name: String = "YOGIYO"
 
     private let useCase: ChildUseCase
 
