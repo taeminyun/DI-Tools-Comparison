@@ -12,7 +12,7 @@ import ChildDomain
 import ColorData
 import StringData
 
-public class ChildViewModel {
+public final class ChildViewModel {
 
     private let alpha: CGFloat = 0.5
     private let name: String = "YOGIYO"

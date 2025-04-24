@@ -10,7 +10,7 @@ import UIKit
 import ChildPresentation
 import ChildDomain
 
-final public class RootViewController: UIViewController {
+public final class RootViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()

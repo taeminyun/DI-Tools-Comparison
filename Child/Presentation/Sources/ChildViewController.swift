@@ -7,7 +7,7 @@
 
 import UIKit
 
-final public class ChildViewController: UIViewController {
+public final class ChildViewController: UIViewController {
 
     private let viewModel: ChildViewModel
 
