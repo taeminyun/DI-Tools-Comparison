@@ -11,8 +11,8 @@ public final class ChildViewController: UIViewController {
 
     private let viewModel: ChildViewModel
 
-    public init(viewModel: ChildViewModel) {
-        self.viewModel = viewModel
+    public init(component: ChildComponent) {
+        self.viewModel = ChildViewModel(component: component)
         super.init(nibName: nil, bundle: nil)
     }
     

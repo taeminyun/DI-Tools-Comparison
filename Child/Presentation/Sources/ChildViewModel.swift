@@ -19,11 +19,8 @@ public final class ChildViewModel {
 
     private let useCase: ChildUseCase
 
-    public init() {
-        self.useCase = ChildUseCase(
-            colorRepository: ColorRepositoryImpl(alpha: alpha),
-            stringRepository: StringRepositoryImpl(to: name)
-        )
+    public init(component: ChildComponent) {
+        self.useCase = component.childUseCase
     }
 
     var backgroundColor: UIColor {

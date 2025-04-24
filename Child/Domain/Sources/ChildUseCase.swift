@@ -7,13 +7,20 @@
 
 import CoreGraphics
 
+import NeedleFoundation
+
 import ColorDomain
 import StringDomain
 
-public struct ChildUseCase {
+public protocol ChildUseCaseProtocol: Dependency {
+    var colorRepository: ColorRepository { get }
+    var stringRepository: StringRepository { get }
+}
 
-    private let colorRepository: ColorRepository
-    private let stringRepository: StringRepository
+public class ChildUseCase: ChildUseCaseProtocol {
+
+    public let colorRepository: ColorRepository
+    public let stringRepository: StringRepository
 
     public init(
         colorRepository: ColorRepository,

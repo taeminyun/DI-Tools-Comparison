@@ -11,8 +11,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
+
+        registerProviderFactories()
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = RootViewController()
+        window?.rootViewController = RootComponent(alpha: 0.5, name: "YOGIYO").rootViewController
         window?.makeKeyAndVisible()
         
         DIToolsComparisonKit.hello()

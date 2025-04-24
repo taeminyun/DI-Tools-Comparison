@@ -7,10 +7,22 @@
 
 import UIKit
 
+import NeedleFoundation
+
 import ChildPresentation
-import ChildDomain
 
 public final class RootViewController: UIViewController {
+
+    let childComponent: ChildComponent
+
+    init(childComponent: ChildComponent) {
+        self.childComponent = childComponent
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +44,7 @@ public final class RootViewController: UIViewController {
 // MARK: - private
 private extension RootViewController {
     func handleButton() {
-        present(
-            ChildViewController(viewModel: ChildViewModel()),
-            animated: true
-        )
+        present(ChildViewController(component: childComponent), animated: true)
     }
 }
 

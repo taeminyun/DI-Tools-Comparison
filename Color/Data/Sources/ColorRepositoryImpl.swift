@@ -9,7 +9,7 @@ import CoreGraphics
 
 import ColorDomain
 
-public struct ColorRepositoryImpl: ColorRepository {
+public class ColorRepositoryImpl: ColorRepository {
 
     public var colors: [String] {
         ["systemRed", "systemGreen", "systemBlue"]
@@ -17,7 +17,7 @@ public struct ColorRepositoryImpl: ColorRepository {
 
     public let alpha: CGFloat
 
-    public init(alpha: CGFloat) {
+    required public init(alpha: CGFloat) {
         self.alpha = alpha
     }
 }

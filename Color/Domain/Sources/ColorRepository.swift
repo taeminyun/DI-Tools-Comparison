@@ -7,7 +7,9 @@
 
 import CoreGraphics
 
-public protocol ColorRepository {
+import NeedleFoundation
+
+public protocol ColorRepository: Dependency {
     var colors: [String] { get }
     var alpha: CGFloat { get }
 

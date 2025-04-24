@@ -7,7 +7,7 @@
 
 import StringDomain
 
-public struct StringRepositoryImpl: StringRepository {
+public class StringRepositoryImpl: StringRepository {
     public var str1: String { "Hello, " }
 
     public var str2: String { "World" }
@@ -16,7 +16,7 @@ public struct StringRepositoryImpl: StringRepository {
 
     public let name: String
 
-    public init(to name: String) {
+    required public init(to name: String) {
         self.name = name
     }
 }
