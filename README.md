@@ -1,5 +1,6 @@
 # 버전
 - tuist: 3.42.2
 # 실행
-1. tuist fetch
-2. tuist generate
+1. needle generate ./Targets/DIToolsComparison/Sources/NeedleGenerated.swift .
+2. tuist fetch
+3. tuist generate
