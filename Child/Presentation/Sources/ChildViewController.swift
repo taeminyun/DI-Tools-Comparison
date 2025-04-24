@@ -7,12 +7,14 @@
 
 import UIKit
 
+import Swinject
+
 public final class ChildViewController: UIViewController {
 
     private let viewModel: ChildViewModel
 
-    public init(viewModel: ChildViewModel) {
-        self.viewModel = viewModel
+    public init(with container: Container) {
+        self.viewModel = ChildViewModel(with: container)
         super.init(nibName: nil, bundle: nil)
     }
     

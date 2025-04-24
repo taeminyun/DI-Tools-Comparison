@@ -7,10 +7,9 @@
 
 import UIKit
 
-import ChildDomain
+import Swinject
 
-import ColorData
-import StringData
+import ChildDomain
 
 public final class ChildViewModel {
 
@@ -19,11 +18,8 @@ public final class ChildViewModel {
 
     private let useCase: ChildUseCase
 
-    public init() {
-        self.useCase = ChildUseCase(
-            colorRepository: ColorRepositoryImpl(alpha: alpha),
-            stringRepository: StringRepositoryImpl(to: name)
-        )
+    public init(with container: Container) {
+        self.useCase = container.resolve(ChildUseCase.self, arguments: alpha, name)!
     }
 
     var backgroundColor: UIColor {

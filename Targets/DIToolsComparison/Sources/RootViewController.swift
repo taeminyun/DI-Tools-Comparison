@@ -7,8 +7,9 @@
 
 import UIKit
 
+import Swinject
+
 import ChildPresentation
-import ChildDomain
 
 public final class RootViewController: UIViewController {
 
@@ -32,10 +33,6 @@ public final class RootViewController: UIViewController {
 // MARK: - private
 private extension RootViewController {
     func handleButton() {
-        present(
-            ChildViewController(viewModel: ChildViewModel()),
-            animated: true
-        )
+        present(ChildViewController(with: DIContainer.shared.container), animated: true)
     }
 }
-
